@@ -21,17 +21,18 @@
         content               = $this.data('template'),
         insertionMethod       = $this.data('association-insertion-method') || $this.data('association-insertion-position') || 'before';
         insertionNode         = $this.data('association-insertion-node'),
-        regexp_braced         = new RegExp('\\[new_' + assoc + '\\]', 'g'),
+        //regexp_braced         = new RegExp('\\[new_' + assoc + '\\]', 'g'),
         regexp_underscord     = new RegExp('_new_' + assoc + '_', 'g'),
         new_id                = new Date().getTime(),
         newcontent_braced     = '[' + new_id + ']',
         newcontent_underscord = '_' + new_id + '_',
-        new_content           = content.replace(regexp_braced, '[' + new_id + ']');
+        new_content           = content;
+        //new_content           = content.replace(regexp_braced, '[' + new_id + ']');
 
     if (new_content == content) {
-        regexp_braced     = new RegExp('\\[new_' + assocs + '\\]', 'g');
+        //regexp_braced     = new RegExp('\\[new_' + assocs + '\\]', 'g');
         regexp_underscord = new RegExp('_new_' + assocs + '_', 'g');
-        new_content       = content.replace(regexp_braced, '[' + new_id + ']');
+        //new_content       = content.replace(regexp_braced, '[' + new_id + ']');
     }
 
     new_content = new_content.replace(regexp_underscord, newcontent_underscord);
